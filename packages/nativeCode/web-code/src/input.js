@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
 import HockeyTeam from './hockeyTeam';
+import useHockeyTeam from './hockeyTeamHooks';
 
-class CustomInput extends Component {
+const CustomInput = () => {
+  const { value, isValid, onChange } = useHockeyTeam();
 
-  onChange = (event) => {
-    this.props.onChange(event.target.value);
-  }
+  const onChangeInput = event => onChange(event.target.value);
 
-  render() {
-    const { value, isValid } = this.props;
-
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <label style={{ marginBottom: '12px' }}>What is your favorite hockey team?</label>
-        <input style={{ fontSize: '24px', padding: '5px', color: isValid ? 'green' : 'red', borderColor: isValid ? 'green' : 'red' }} value={value} onChange={this.onChange} />
-      </div>
-    );
-  }
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <label style={{ marginBottom: '12px' }}>What is your favorite hockey team?</label>
+      <input style={{ fontSize: '24px', padding: '5px', color: isValid ? 'green' : 'red', borderColor: isValid ? 'green' : 'red' }} value={value} onChange={onChangeInput} />
+    </div>
+  );
 }
 
 export default HockeyTeam(CustomInput);
