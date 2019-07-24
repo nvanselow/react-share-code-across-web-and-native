@@ -18,5 +18,8 @@
   "homepage": "https://github.com/nvanselow/react-share-code-across-web-and-native#readme",
   "dependencies": {
     "prettier": "^1.18.2"
+  },
+  "devDependencies": {
+    "lerna": "^2.2.0"
   }
 }
