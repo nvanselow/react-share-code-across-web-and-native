@@ -24,7 +24,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-// import CustomInput from './web-code/src/input';
+import CustomInput from './web-code/src/input';
 
 const App = () => {
   return (
@@ -39,6 +39,7 @@ const App = () => {
               <Text style={styles.sectionDescription}>
                 Our components will go here
               </Text>
+              <CustomInput />
             </View>
           </View>
         </ScrollView>
