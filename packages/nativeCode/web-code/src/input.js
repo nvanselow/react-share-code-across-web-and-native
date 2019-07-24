@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
+import HockeyTeam from './hockeyTeam';
 
 class CustomInput extends Component {
 
-  state = { value: '' };
-
   onChange = (event) => {
-    this.setState({ value: event.target.value })
+    this.props.onChange(event.target.value);
   }
 
   render() {
-    const { value } = this.state;
+    const { value } = this.props;
     const isValid = value.toLowerCase() === 'bruins';
 
     return (
@@ -21,4 +20,4 @@ class CustomInput extends Component {
   }
 }
 
-export default CustomInput;
+export default HockeyTeam(CustomInput);
