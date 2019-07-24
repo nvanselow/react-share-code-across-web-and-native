@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  TextInput
 } from 'react-native';
 
 import {
@@ -24,7 +25,16 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import CustomInput from './web-code/src/input';
+import HockeyTeam from './web-code/src/hockeyTeam';
+
+const CustomInput = ({ value, onChange }) => {
+  return <View>
+    <Text>What is your favorite hockey team?</Text>
+    <TextInput value={value} onChangeText={onChange} />
+  </View>;
+};
+
+const CustomInputWithTeam = HockeyTeam(CustomInput);
 
 const App = () => {
   return (
@@ -39,7 +49,7 @@ const App = () => {
               <Text style={styles.sectionDescription}>
                 Our components will go here
               </Text>
-              <CustomInput />
+              <CustomInputWithTeam />
             </View>
           </View>
         </ScrollView>
