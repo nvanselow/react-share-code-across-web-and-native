@@ -8,8 +8,7 @@ class CustomInput extends Component {
   }
 
   render() {
-    const { value } = this.props;
-    const isValid = value.toLowerCase() === 'bruins';
+    const { value, isValid } = this.props;
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column' }}>

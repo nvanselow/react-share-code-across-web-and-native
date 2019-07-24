@@ -27,10 +27,10 @@ import {
 
 import HockeyTeam from './web-code/src/hockeyTeam';
 
-const CustomInput = ({ value, onChange }) => {
+const CustomInput = ({ value, onChange, isValid }) => {
   return <View>
     <Text>What is your favorite hockey team?</Text>
-    <TextInput value={value} onChangeText={onChange} />
+    <TextInput style={isValid ? styles.validInput : styles.invalidInput} value={value} onChangeText={onChange} />
   </View>;
 };
 
@@ -59,6 +59,12 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+  validInput: {
+    color: 'green'
+  },
+  invalidInput: {
+    color: 'red'
+  },
   scrollView: {
     backgroundColor: Colors.lighter,
   },
